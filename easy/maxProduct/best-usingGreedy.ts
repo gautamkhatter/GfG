@@ -11,17 +11,20 @@ function maxProductTriplet3(nums: number[]) {
          thirdLargest = secondLargest;
          secondLargest = largest;
          largest = nums[i];
-      } else if (nums[i] > secondLargest) {
+      }
+      else if (nums[i] > secondLargest) {
          thirdLargest = secondLargest;
          secondLargest = nums[i];
-      } else if (nums[i] > thirdLargest) {
+      }
+      else if (nums[i] > thirdLargest) {
          thirdLargest = nums[i];
       }
 
       if (nums[i] < minimum) {
          secondMinimum = minimum;
          minimum = nums[i];
-      } else if (nums[i] < secondMinimum) {
+      }
+      else if (nums[i] < secondMinimum) {
          secondMinimum = nums[i];
       }
    }

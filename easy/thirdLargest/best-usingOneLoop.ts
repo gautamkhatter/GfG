@@ -1,4 +1,4 @@
-function thirdLargestELement3(nums: number[]) {
+function thirdLargestUsingOneLoop(nums: number[]) {
    let largest = Number.MIN_VALUE;
    let secondLargest = Number.MIN_VALUE;
    let thirdLargest = Number.MIN_VALUE;

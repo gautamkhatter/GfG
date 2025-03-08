@@ -17,10 +17,12 @@
  * -------
  * Input: arr[] = [10, 10, 10]
  * Output: -1
- *                      ----------------------------
- *                       Time Complexity: O(nlogn);
- *                       Space Complexity: O(1);
- *                      ----------------------------
+ * 
+ * Solution:- Naive approach - using sorting
+ * ----------------------------
+ *  Time Complexity: O(nlogn);
+ *  Space Complexity: O(1);
+ * ----------------------------
 */
 
 function secondLargestBySorting(nums: number[]) {

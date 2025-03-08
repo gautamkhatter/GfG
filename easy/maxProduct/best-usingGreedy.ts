@@ -1,4 +1,4 @@
-function maxProductTriplet3(nums: number[]) {
+function maxProductTripletByBeingGreedy(nums: number[]) {
    let largest = -Infinity,
       secondLargest = -Infinity,
       thirdLargest = -Infinity;
@@ -35,5 +35,5 @@ function maxProductTriplet3(nums: number[]) {
    );
 }
 
-const maxProduct = maxProductTriplet3([-10, -3, -5, -6, -20]);
+const maxProduct = maxProductTripletByBeingGreedy([-10, -3, -5, -6, -20]);
 console.log(maxProduct);

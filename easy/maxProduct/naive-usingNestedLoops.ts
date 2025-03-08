@@ -1,4 +1,4 @@
-function maxProductTriplet(nums: number[]) {
+function maxProductTripletUsingNestedLoops(nums: number[]) {
    let maxProduct = Number.MIN_VALUE;
 
    for (let i = 0; i < nums.length - 2; i++) {

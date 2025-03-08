@@ -1,4 +1,4 @@
-function maxProductTriplet2(nums: number[]) {
+function maxProductTripletBySorting(nums: number[]) {
    nums.sort((a, b) => a - b);
    
    return Math.max(

@@ -25,7 +25,7 @@
  * ----------------------------
 */
 
-function secondLargestBySorting(nums: number[]) {
+function secondLargestBySorting(nums: number[]): number {
    // sorting the given array in non decreasing order
    nums.sort((a, b) => a - b);
    // array may contain duplicate elements so we are traversing

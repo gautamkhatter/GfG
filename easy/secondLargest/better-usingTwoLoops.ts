@@ -1,4 +1,4 @@
-function secondLargestElement2(nums: number[]) {
+function secondLargestUsingTwoLoops(nums: number[]) {
    let largest = Number.MIN_VALUE;
    let secondLargest = Number.MIN_VALUE;
 
@@ -16,4 +16,4 @@ function secondLargestElement2(nums: number[]) {
 }
 
 const arr2 = [12, 35, 1, 10, 34, 1];
-console.log(secondLargestElement2(arr2));
+console.log(secondLargestUsingTwoLoops(arr2));

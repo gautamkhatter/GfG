@@ -52,7 +52,7 @@ function thirdLargestUsingOneLoop(nums: number[]) {
  * ### 🤯 Dry Run:-
  * Eg: arr[] = [1, 14, 2, 16, 10, 20]
  *
- * Call - thirdLargestUsingThreeLoops(arr);
+ * Call - thirdLargestUsingOneLoops(arr);
  *
  * Inside Function:
  *    • In the first if check, we check if the current element is the largest element

@@ -18,9 +18,9 @@
 */
 
 function thirdLargestUsingThreeLoops(nums: number[]) {
-   let largest = Number.MIN_VALUE;
-   let secondLargest = Number.MIN_VALUE;
-   let thirdLargest = Number.MIN_VALUE;
+   let largest = -Infinity;
+   let secondLargest = -Infinity;
+   let thirdLargest = -Infinity;
 
    // finding the largest element
    for (let i = 0; i < nums.length; i++) {

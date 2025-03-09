@@ -6,11 +6,11 @@
  * #### 🧠 Solution:- better approach - using three loops
  * 
  * 💭 Ex.1:-
- * Input: arr[] = [1, 14, 2, 16, 10, 20],
+ * Input: nums[] = [1, 14, 2, 16, 10, 20],
  * Output: 14
  * 
  * 💭 Ex.2:-
- * Input: arr[] = [19, -10, 20, 14, 2, 16, 10],
+ * Input: nums[] = [19, -10, 20, 14, 2, 16, 10],
  * Output: 16
  * 
  *#### Time Complexity: O(3n) = O(n);
@@ -42,18 +42,19 @@ function thirdLargestUsingThreeLoops(nums: number[]): number {
 }
 
 /**
- * ### 💡 Idea:- 
+ * ### 💡 Idea behind the approach:-
+ * 
  * The idea behind this approach is simple, we track largest, second largest 
  * and third largest element in the given array using three individual loops to
  * find each element.
  * 
  *
- * ### 🤯 Dry Run:-
- * Eg: arr[] = [1, 14, 2, 16, 10, 20]
+ * ### 🤯 Dry run of the code:-
  * 
- * Call - thirdLargestUsingThreeLoops(arr);
+ * Eg:- nums[] = [1, 14, 2, 16, 10, 20]
+ * Function call:- thirdLargestUsingThreeLoops(nums);
  * 
- * Inside Function:
+ * Function execution:-
  *    • In first loop one we find largest element which is 20
  *    
  *    • In second loop we find the second largest while comparing it with largest

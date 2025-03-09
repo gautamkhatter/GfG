@@ -27,7 +27,8 @@ function thirdLargestUsingSorting(nums: number[]): number {
 }
 
 /**
- * ### 💡 Idea:- 
+ * ### 💡 Idea behind the approach:-
+ *  
  * The idea behind this approach is simple, we sort the array in non-decreasing order.
  * Q: What is this non decreasing order?
  * A: Well, to put it simply it is ascending order that allows to have duplication
@@ -39,11 +40,12 @@ function thirdLargestUsingSorting(nums: number[]): number {
  * is not equal to the last, if we find it we return that element otherwise we return -1;
  * 
  *
- * ### 🤯 Dry Run:-
- * Eg: arr[] = [12, 35, 1, 10, 34, 1]
+ * ### 🤯 Dry run of the code:-
  * 
- * Call - thirdLargestUsingSorting(arr);
- * Inside Function:
+ * Eg:- arr[] = [12, 35, 1, 10, 34, 1]
+ * Function call:- thirdLargestUsingSorting(arr);
+ * 
+ * Function execution:-
  *    • Calling the sort function which takes (nlogn) time
  * 
  *    • Because there can be multiple same elements after sorting like:

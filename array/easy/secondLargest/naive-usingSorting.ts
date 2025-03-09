@@ -1,16 +1,16 @@
 /**
- * ### Question 🤔 :-
+ * ### 🤔 Question:-
  * Given an array of positive integers arr[] of size n, the task is to 
  * find second largest distinct element in the array. Note: If the second 
  * largest element does not exist, return -1.
  * 
- * #### Solution 🧠 :- Naive approach - using sorting
+ * #### 🧠 Solution:- Naive approach - using sorting
  * 
- * Ex.1 💭 :-
+ * 💭 Ex.1:-
  * Input: arr[] = [12, 35, 1, 10, 34, 1],
  * Output: 34
  * 
- * Ex.2 💭 :-
+ * 💭 Ex.2:-
  * Input: arr[] = [10, 10, 10],
  * Output: -1
  * 
@@ -35,7 +35,7 @@ const arr = [12, 35, 1, 10, 34, 1];
 console.log(secondLargestBySorting(arr));
 
 /**
- * ### Idea💡 :- 
+ * ### 💡 Idea:- 
  * The idea behind this approach is simple, we sort the array in non-decreasing order.
  * Q: What is this non decreasing order?
  * A: Well, to put it simply it is ascending order that allows to have duplication
@@ -47,7 +47,7 @@ console.log(secondLargestBySorting(arr));
  * is not equal to the last, if we find it we return that element otherwise we return -1;
  * 
  *
- * ### Dry Run 🤯 :-
+ * ### 🤯 Dry Run:-
  * Eg: arr[] = [12, 35, 1, 10, 34, 1]
  * 
  * Call - secondLargestBySorting(arr);

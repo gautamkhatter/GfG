@@ -18,7 +18,7 @@
  *####  Space Complexity: O(1);
 */
 
-function secondLargestUsingOneLoop(nums: number[]) {
+function secondLargestUsingOneLoop(nums: number[]): number {
    let largest = -Infinity;
    let secondLargest = -Infinity;
    

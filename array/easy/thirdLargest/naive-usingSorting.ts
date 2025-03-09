@@ -17,7 +17,7 @@
  *####  Space Complexity: O(1);
 */
 
-function thirdLargestUsingSorting(nums: number[]) {
+function thirdLargestUsingSorting(nums: number[]): number {
    // checking for edge cases
    if (nums.length === 0) return -1;
    if (nums.length === 1) return nums[0];

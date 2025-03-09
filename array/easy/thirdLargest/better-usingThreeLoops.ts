@@ -17,7 +17,7 @@
  *#### Space Complexity: O(1);
 */
 
-function thirdLargestUsingThreeLoops(nums: number[]) {
+function thirdLargestUsingThreeLoops(nums: number[]): number {
    let largest = -Infinity;
    let secondLargest = -Infinity;
    let thirdLargest = -Infinity;

@@ -21,7 +21,7 @@
  *#### Space Complexity: O(1);
  */
 
-function reverseArrayInGroups(nums: number[], groupSize: number) {
+function reverseArrayInGroups(nums: number[], groupSize: number): void {
    for (let i = 0; i < nums.length; i += groupSize) {
       let left = i;
       // the main logic is determining the right pointer position 

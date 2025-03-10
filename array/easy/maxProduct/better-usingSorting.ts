@@ -18,7 +18,11 @@
  */
 
 function maxProductTripletBySorting(nums: number[]) {
+   // sorting the array in non-decreasing order 
+   // (ascending order which allows for duplicate elements)
    nums.sort((a, b) => a - b);
+   // Checking if array contains -ve numbers then maybe 
+   // first two elements can become positive by multiplying them.
    return Math.max(
       nums[0] * nums[1] * nums[nums.length - 1],
       nums[nums.length - 1] * nums[nums.length - 2] * nums[nums.length - 3]
@@ -39,7 +43,7 @@ function maxProductTripletBySorting(nums: number[]) {
  * ### 🤯 Dry run of the code:-
  * 
  * Eg:- nums[] = [10, 3, 5, 6, 20]
- * Function call:- moveZerosToEndUsingArray(nums);
+ * Function call:- maxProductTripletBySorting(nums);
  * 
  * Function execution:-
  *    • We sort the array and we get:-

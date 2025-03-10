@@ -95,7 +95,6 @@ function maxConsecutiveCountUsingLoop(nums: number[]) {
  *                = count = 1
  * 
  **         currentMax = 2
- *          currentMax = 2
  *          (i=6) = nums[i] === nums[i-1]
  *                = nums[6] === nums[5] => 1==0 => false
  *                = currentMax = max(2, 1) => 2
@@ -128,5 +127,9 @@ function maxConsecutiveCountUsingLoop(nums: number[]) {
  *                 = nums[11] === nums[10] => 1==1 => true
  *                 = count++ => 4
  * 
+ **         return max(maxConsecutiveCount, currentCount)
+ **              = max(2, 4)
+ **         return = 4
+ 
  * Now after the loop ends, we just return the max(currentMax, count);
  */

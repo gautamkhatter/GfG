@@ -5,23 +5,24 @@
  *
  * #### 🧠 Solution:- best approach - using two pointers
  *
- * 💭 Ex.1:-
- * Input: nums = [1, 2, 3, 4, 5, 6, 7, 8, 9], K = 3,
- * Output: [(3,2,1), (6,5,4), (9,8,7)];
+ * Eg.1:-
+ * input: nums = [1, 2, 3, 4, 5, 6, 7, 8, 9], K = 3,
+ * output: [(3,2,1), (6,5,4), (9,8,7)];
  *
- * 💭 Ex.2:-
- * Input: nums = [1, 2, 3, 4, 5, 6], K = 1,
- * Output: [1, 2, 3, 4, 5, 6]
+ * Eg.2:-
+ * input: nums = [1, 2, 3, 4, 5, 6], K = 1,
+ * output: [1, 2, 3, 4, 5, 6]
  * 
- * 💭 Ex.3:-
- * Input: nums = [1, 2, 3, 4, 5, 6, 7, 8], K = 10,
- * Output: [8, 7, 6, 5, 4, 3, 2, 1]
+ * Eg.3:-
+ * input: nums = [1, 2, 3, 4, 5, 6, 7, 8], K = 10,
+ * output: [8, 7, 6, 5, 4, 3, 2, 1]
  *
  *#### Time Complexity: O(n);
  *#### Space Complexity: O(1);
  */
 
 function reverseArrayInGroups(nums: number[], groupSize: number): void {
+   // iterating over the array with the fixed groupSize (k)
    for (let i = 0; i < nums.length; i += groupSize) {
       let left = i;
       // the main logic is determining the right pointer position 
@@ -38,7 +39,8 @@ function reverseArrayInGroups(nums: number[], groupSize: number): void {
 }
 
 /**
- * ### 💡 Idea:-
+ * ### 💡 Idea behind the approach:-
+ * 
  * The idea behind this approach is that is we traverse the array according to the 
  * groupSize (K) and then for every groupSize or sub-array we reverse those elements.
  * But we need to take care of some edge cases:-
@@ -51,12 +53,13 @@ function reverseArrayInGroups(nums: number[], groupSize: number): void {
  *      or equal to array length (K >= n), then we just need to reverse all the elements in
  *      array.
  *
- * ### 🤯 Dry Run:-
- * Eg: arr[] = [1, 2, 3, 4, 5, 6, 7, 8, 9], K=3
+ * 
+ * ### 🤯 Dry run of the code:-
+ * 
+ * Eg: nums[] = [1, 2, 3, 4, 5, 6, 7, 8, 9], K=3
+ * Function call - reverseArrayInGroups(nums);
  *
- * Call - reverseArrayInGroups(nums);
- *
- * Inside Function:
+ * Function execution:-
  *    • We start traversing the array where we start with left position to be 0
  *      and right position = i+groupSize-1 = 0+3-1 = 2
  *       

@@ -5,13 +5,13 @@
  * 
  * #### 🧠 Solution:- better approach - using three loops
  * 
- * 💭 Ex.1:-
- * Input: nums[] = [1, 14, 2, 16, 10, 20],
- * Output: 14
+ * Eg.1:-
+ * input: nums[] = [1, 14, 2, 16, 10, 20],
+ * output: 14
  * 
- * 💭 Ex.2:-
- * Input: nums[] = [19, -10, 20, 14, 2, 16, 10],
- * Output: 16
+ * Eg.2:-
+ * input: nums[] = [19, -10, 20, 14, 2, 16, 10],
+ * output: 16
  * 
  *#### Time Complexity: O(3n) = O(n);
  *#### Space Complexity: O(1);

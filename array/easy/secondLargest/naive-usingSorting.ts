@@ -6,13 +6,13 @@
  * 
  * #### 🧠 Solution:- Naive approach - using sorting
  * 
- * 💭 Ex.1:-
- * Input: arr[] = [12, 35, 1, 10, 34, 1],
- * Output: 34
+ * Eg.1:-
+ * input: nums[] = [12, 35, 1, 10, 34, 1],
+ * output: 34
  * 
- * 💭 Ex.2:-
- * Input: arr[] = [10, 10, 10],
- * Output: -1
+ * Eg.2:-
+ * input: nums[] = [10, 10, 10],
+ * output: -1
  * 
  *#### Time Complexity: O(nlogn);
  *####  Space Complexity: O(1);
@@ -35,7 +35,8 @@ const arr = [12, 35, 1, 10, 34, 1];
 console.log(secondLargestBySorting(arr));
 
 /**
- * ### 💡 Idea:- 
+ * ### 💡 Idea behind the approach:-
+ *  
  * The idea behind this approach is simple, we sort the array in non-decreasing order.
  * Q: What is this non decreasing order?
  * A: Well, to put it simply it is ascending order that allows to have duplication
@@ -47,12 +48,13 @@ console.log(secondLargestBySorting(arr));
  * is not equal to the last, if we find it we return that element otherwise we return -1;
  * 
  *
- * ### 🤯 Dry Run:-
- * Eg: arr[] = [12, 35, 1, 10, 34, 1]
+ * ### 🤯 Dry run of the code:-
  * 
- * Call - secondLargestBySorting(arr);
- * Inside Function:
- *    • Calling the sort function which takes (nlogn) time
+ * Eg:- nums[] = [12, 35, 1, 10, 34, 1]
+ * Function call:- secondLargestBySorting(nums);
+ * 
+ * Function execution:
+ *    • We call the sort function which takes (nlogn) time
  * 
  *    • Because there can be multiple same elements after sorting like:
  *      arr[] = [2, 10, 22, 45, 66, 66];

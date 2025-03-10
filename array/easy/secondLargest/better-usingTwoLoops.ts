@@ -6,13 +6,13 @@
  * 
  * #### 🧠 Solution:- Better approach - using two loops
  * 
- * 💭 Ex.1:-
- * Input: arr[] = [12, 35, 1, 10, 34, 1],
- * Output: 34
+ * Eg.1:-
+ * input: nums[] = [12, 35, 1, 10, 34, 1],
+ * output: 34
  * 
- * 💭 Ex.2:-
- * Input: arr[] = [10, 10, 10],
- * Output: -1
+ * Eg.2:-
+ * input: arr[] = [10, 10, 10],
+ * output: -1
  * 
  *#### Time Complexity: O(2n) = O(n);
  *####  Space Complexity: O(1);
@@ -42,18 +42,20 @@ const arr2 = [12, 35, 1, 10, 34, 1];
 console.log(secondLargestUsingTwoLoops(arr2));
 
 /**
- * ### 💡 Idea:- 
+ * ### 💡 Idea behind the approach:-
+ *  
  * The idea behind this approach is simple, in first traverse the array to find the 
  * largest and in second traversal we find the second largest on the condition that it
  * is not equal to the largest we fond earlier.
  * 
  * 
- * ### 🤯 Dry Run:-
- * Eg: arr[] = [12, 35, 1, 10, 34, 1]
+ * ### 🤯 Dry run of the code:-
  * 
- * Call - secondLargestUsingTwoLoops   (arr);
- * Inside Function:
- *    • declare two variables that largest and second largest value.
+ * Eg:- nums[] = [12, 35, 1, 10, 34, 1]
+ * Function call - secondLargestUsingTwoLoops(nums);
+ * 
+ * Function execution:-
+ *    • We declare two variables that are largest and second largest.
  *    
  *    • In the first loop we find the largest element in the array
  *      Eg: [12, 35, 1, 10, 34, 1];

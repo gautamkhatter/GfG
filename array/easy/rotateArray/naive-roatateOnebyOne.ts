@@ -21,7 +21,7 @@
  * After third left rotation, nums = [1, 2, 3],
  * After fourth left rotation, nums = [2, 3, 1],
  *
- *#### Time Complexity: O(n*k) = O(n);
+ *#### Time Complexity: O(n*k);
  *#### Space Complexity: O(1);
  */
 

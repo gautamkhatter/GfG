@@ -17,7 +17,7 @@
  *#### Space Complexity: O(1);
  */
 
-function maxProductTripletUsingNestedLoops(nums: number[]) {
+function maxProductTripletUsingNestedLoops(nums: number[]): number {
    let maxProduct = -Infinity;
    // 'i' is going till before the last two elements because j & k will already 
    // take care of last two elements

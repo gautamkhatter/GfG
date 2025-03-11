@@ -17,7 +17,7 @@
  *#### Space Complexity: O(1);
  */
 
-function maxProductTripletBySorting(nums: number[]) {
+function maxProductTripletBySorting(nums: number[]): number {
    // sorting the array in non-decreasing order 
    // (ascending order which allows for duplicate elements)
    nums.sort((a, b) => a - b);

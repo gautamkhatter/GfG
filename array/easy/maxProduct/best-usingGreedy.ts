@@ -17,7 +17,7 @@
  *#### Space Complexity: O(1);
  */
 
-function maxProductTripletByBeingGreedy(nums: number[]) {
+function maxProductTripletByBeingGreedy(nums: number[]): number {
    let largest = -Infinity,
       secondLargest = -Infinity,
       thirdLargest = -Infinity;

@@ -23,7 +23,7 @@
  *#### Space Complexity: O(1);
  */
 
-function maxConsecutiveCountUsingLoop(nums: number[]) {
+function maxConsecutiveCountUsingLoop(nums: number[]): number {
    let maxConsecutiveCount = 0, currentCount = 1;
    for (let i = 1; i < nums.length; i++) {
       if (nums[i] === nums[i - 1]) {

@@ -23,7 +23,7 @@
  *#### Space Complexity: O(1);
  */
 
-function maxConsecutiveCountUsingBitManipulation(nums: number[]) {
+function maxConsecutiveCountUsingBitManipulation(nums: number[]): number {
    let maxConsecutiveCount = 0,
       currentCount = 0,
       previous = -1;

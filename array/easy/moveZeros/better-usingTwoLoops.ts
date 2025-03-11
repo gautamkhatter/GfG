@@ -17,7 +17,7 @@
  *#### Space Complexity: O(1);
  */
 
-function moveZerosToEndUsingTwoLoops(nums: number[]) {
+function moveZerosToEndUsingTwoLoops(nums: number[]): void {
    // count tracks where should we put the non-zero element that comes next
    let count = 0;
    // replace the zero element position with a non-zero element when encountering it

@@ -17,7 +17,7 @@
  *#### Space Complexity: O(1);
  */
 
-function moveZerosToEndUsingOneLoop(nums: number[]) {
+function moveZerosToEndUsingOneLoop(nums: number[]): void {
    let count = 0;
    for (let i = 0; i < nums.length; i++) {
       if (nums[i] !== 0) {

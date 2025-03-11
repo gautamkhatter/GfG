@@ -82,8 +82,7 @@ function rotateArrayUsingTempArray(
  * 
  * 
  **         First for loop begins
- *          n = 6
- *          k = 2
+ *          n = 6, k = 2
  *          temp = []
  *                    0  1  2  3  4  5
  *          nums[] = [1, 2, 3, 4, 5, 6]
@@ -97,8 +96,7 @@ function rotateArrayUsingTempArray(
  *           temp = [3]
  * 
  * 
- *          n = 6
- *          k = 2
+ *          n = 6, k = 2
  *          temp = [3]
  *                    0  1  2  3  4  5
  *          nums[] = [1, 2, 3, 4, 5, 6]
@@ -112,8 +110,7 @@ function rotateArrayUsingTempArray(
  *           temp = [3, 4]
  * 
  * 
- *          n = 6
- *          k = 2
+ *          n = 6, k = 2
  *          temp = []
  *                    0  1  2  3  4  5
  *          nums[] = [1, 2, 3, 4, 5, 6]
@@ -127,8 +124,7 @@ function rotateArrayUsingTempArray(
  *           temp = [3, 4, 5]
  * 
  * 
- *          n = 6
- *          k = 2
+ *          n = 6, k = 2
  *          temp = [3, 4, 5]
  *                    0  1  2  3  4  5
  *          nums[] = [1, 2, 3, 4, 5, 6]
@@ -145,8 +141,7 @@ function rotateArrayUsingTempArray(
  *
  * 
  **         Second for loop begins
- *          n = 6
- *          k = 2
+ *          n = 6, k = 2
  *          temp = [3, 4, 5, 6]
  *                    0  1  2  3  4  5
  *          nums[] = [1, 2, 3, 4, 5, 6]
@@ -160,8 +155,7 @@ function rotateArrayUsingTempArray(
  *           temp = [3, 4, 5, 6, 1]
  *       
  * 
- *          n = 6
- *          k = 2
+ *          n = 6, k = 2
  *          temp = [3, 4, 5, 6, 1]
  *                    0  1  2  3  4  5
  *          nums[] = [1, 2, 3, 4, 5, 6]

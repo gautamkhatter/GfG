@@ -146,30 +146,30 @@ function is_identical_sequence(
  *                                        => Iterations:= 
  *                                              si = pivot = 1
  *                                                 (si=1) => swap elements at pivot=1 and si=1
- *                                                        => [2,4,1] -> [2,4,1]
- *                                                        => buildAll(pc, [2,4,1], 2);
- *                                                          ------------------------------
- **                                                           [pivot = 2, with 2,4 fixed]
- *                                                          ------------------------------
- *                                                            => base case = if(pivot === ws.length-1)
- *                                                                                  2 === 2 => true
- *                                                            => pc.push([2,4,1]);
- **                                                           => pc = [ [2,4,1] ]
- *                                                            => control goes back to iteration (si=1);
+ *                                                        => [2,4,1] -> [2,4,1]            (control comes back here)
+ *                                                        => buildAll(pc, [2,4,1], 2);    <--------------------|
+ *                                                          ------------------------------                     |
+ **                                                           [pivot = 2, with 2,4 fixed]                      |
+ *                                                          ------------------------------                     |
+ *                                                            => base case = if(pivot === ws.length-1)         |
+ *                                                                                  2 === 2 => true            |  
+ *                                                            => pc.push([2,4,1]);                             |
+ **                                                           => pc = [ [2,4,1] ]                              |
+ *                                                            => control goes back to iteration (si=1);  ------>
  *                                                        => swap elements back from pivot=1, si=1
  *                                                        => [2,4,1] -> [2,4,1];
  * 
  *                                                 (si=2) => swap elements at pivot=1 and si=2
- *                                                        => [2,4,1] -> [2,1,4]
- *                                                        => buildAll(pc, [2,1,4], 2)
- *                                                          ------------------------------
- **                                                           [pivot = 2, with 2,1 fixed]
- *                                                          ------------------------------
- *                                                             => base condition = if(pivot === ws.length-1)
- *                                                                                        2 === 2 => true
- *                                                             => pc.push([2,1,4])
- **                                                            => pc = [ [2,4,1], [2,1,4] ];
- *                                                             => control goes back to iteration (si=2)
+ *                                                        => [2,4,1] -> [2,1,4]              (control comes back here)
+ *                                                        => buildAll(pc, [2,1,4], 2)      <--------------------|
+ *                                                          ------------------------------                      |   
+ **                                                           [pivot = 2, with 2,1 fixed]                       |
+ *                                                          ------------------------------                      |
+ *                                                             => base condition = if(pivot === ws.length-1)    |
+ *                                                                                        2 === 2 => true       |
+ *                                                             => pc.push([2,1,4])                              |
+ **                                                            => pc = [ [2,4,1], [2,1,4] ];                    |
+ *                                                             => control goes back to iteration (si=2);  ------>
  *                                                        => swap elements back from pivot=1 and si=2
  *                                                        => [2,1,4] -> [2,4,1];
  *                    => swap elements back from pivot=0, si=0
@@ -186,34 +186,34 @@ function is_identical_sequence(
  *                                        => Iterations:= 
  *                                              si = pivot = 1
  *                                                 (si=1) => swap elements at pivot=1 and si=1
- *                                                        => [4,2,1] -> [4,2,1]
- *                                                        => buildAll(pc, [4,2,1], 2);
- *                                                          ------------------------------
- **                                                           [pivot = 2, with 4,2 fixed]
- *                                                          ------------------------------
- *                                                            => base case = if(pivot === ws.length-1)
- *                                                                                  2 === 2 => true
- *                                                            => pc.push([4,2,1]);
- **                                                           => pc = [ [2,4,1], [2,1,4], 
- **                                                                     [4,2,1]
- **                                                                   ]
- *                                                            => control goes back to iteration (si=1);
+ *                                                        => [4,2,1] -> [4,2,1]              (control comes back here)
+ *                                                        => buildAll(pc, [4,2,1], 2);    <--------------------|
+ *                                                          ------------------------------                     |
+ **                                                           [pivot = 2, with 4,2 fixed]                      |
+ *                                                          ------------------------------                     |
+ *                                                            => base case = if(pivot === ws.length-1)         |   
+ *                                                                                  2 === 2 => true            |
+ *                                                            => pc.push([4,2,1]);                             |
+ **                                                           => pc = [ [2,4,1], [2,1,4],                      |
+ **                                                                     [4,2,1]                                |
+ **                                                                   ]                                        |
+ *                                                            => control goes back to iteration (si=1);  ------>
  *                                                        => swap elements back from pivot=1, si=1
  *                                                        => [4,2,1] -> [4,2,1];
  * 
  *                                                 (si=2) => swap elements at pivot=1 and si=2
- *                                                        => [4,2,1] -> [4,1,2]
- *                                                        => buildAll(pc, [4,1,2], 2)
- *                                                          ------------------------------
- **                                                           [pivot = 2, with 4,1 fixed]
- *                                                          ------------------------------
- *                                                             => base condition = if(pivot === ws.length-1)
- *                                                                                        2 === 2 => true
- *                                                             => pc.push([4,1,2])
- **                                                            => pc = [ [2,4,1], [2,1,4] 
- **                                                                      [4,2,1], [4,1,2]        
- **                                                                    ];
- *                                                             => control goes back to iteration (si=2)
+ *                                                        => [4,2,1] -> [4,1,2]              (control comes back here)
+ *                                                        => buildAll(pc, [4,1,2], 2)     <--------------------|
+ *                                                          ------------------------------                     |
+ **                                                           [pivot = 2, with 4,1 fixed]                      |
+ *                                                          ------------------------------                     |
+ *                                                             => base condition = if(pivot === ws.length-1)   |
+ *                                                                                        2 === 2 => true      |
+ *                                                             => pc.push([4,1,2])                             |
+ **                                                            => pc = [ [2,4,1], [2,1,4]                      |
+ **                                                                      [4,2,1], [4,1,2]                      | 
+ **                                                                    ];                                      |
+ *                                                             => control goes back to iteration (si=2)  ------>
  *                                                        => swap elements back from pivot=1 and si=2
  *                                                        => [4,1,2] -> [4,2,1];
  *                 => swap element back from pivot=0, si=1
@@ -230,36 +230,36 @@ function is_identical_sequence(
  *                                        => Iterations:= 
  *                                              si = pivot = 1
  *                                                 (si=1) => swap elements at pivot=1 and si=1
- *                                                        => [1,4,2] -> [1,4,2]
- *                                                        => buildAll(pc, [1,4,2], 2);
- *                                                          ------------------------------
- **                                                           [pivot = 2, with 1,4 fixed]
- *                                                          ------------------------------
- *                                                            => base case = if(pivot === ws.length-1)
- *                                                                                  2 === 2 => true
- *                                                            => pc.push([1,4,2]);
- **                                                           => pc = [ [2,4,1], [2,1,4], 
- **                                                                     [4,2,1], [4,1,2],
- **                                                                     [1,4,2],
- **                                                                   ]
-                                                              => control goes back to iteration (si=1)
+ *                                                        => [1,4,2] -> [1,4,2]            (control comes back here)
+ *                                                        => buildAll(pc, [1,4,2], 2);  <--------------------|       
+ *                                                          ------------------------------                   | 
+ **                                                           [pivot = 2, with 1,4 fixed]                    |
+ *                                                          ------------------------------                   |
+ *                                                            => base case = if(pivot === ws.length-1)       |
+ *                                                                                  2 === 2 => true          |
+ *                                                            => pc.push([1,4,2]);                           |
+ **                                                           => pc = [ [2,4,1], [2,1,4],                    |
+ **                                                                     [4,2,1], [4,1,2],                    |
+ **                                                                     [1,4,2],                             |
+ **                                                                   ]                                      |
+                                                              => control goes back to iteration (si=1) ------>
  *                                                        => swap elements back from pivot=1, si=1
  *                                                        => [1,4,2] -> [1,4,2];
  * 
  *                                                 (si=2) => swap elements at pivot=1 and si=2
- *                                                        => [1,4,2] -> [1,2,4]
- *                                                        => buildAll(pc, [1,2,4], 2)
- *                                                          ------------------------------
- **                                                           [pivot = 2, with 4,1 fixed]
- *                                                          ------------------------------
- *                                                             => base condition = if(pivot === ws.length-1)
- *                                                                                        2 === 2 => true
- *                                                             => pc.push([1,2,4])
- **                                                            => pc = [ [2,4,1], [2,1,4] 
- **                                                                      [4,2,1], [4,1,2],
- **                                                                      [1,4,2], [1,2,4]        
- **                                                                    ];
- *                                                             => control goes back to iteration (si=2)
+ *                                                        => [1,4,2] -> [1,2,4]             (control comes back here)
+ *                                                        => buildAll(pc, [1,2,4], 2)    <--------------------|                 
+ *                                                          ------------------------------                    |
+ **                                                           [pivot = 2, with 4,1 fixed]                     |
+ *                                                          ------------------------------                    |
+ *                                                             => base condition = if(pivot === ws.length-1)  |
+ *                                                                                        2 === 2 => true     |
+ *                                                             => pc.push([1,2,4])                            |
+ **                                                            => pc = [ [2,4,1], [2,1,4]                     |
+ **                                                                      [4,2,1], [4,1,2],                    | 
+ **                                                                      [1,4,2], [1,2,4]                     |
+ **                                                                    ];                                     |
+ *                                                             => control goes back to iteration (si=2) ------>
  *                                                        => swap elements back from pivot=1 and si=2
  *                                                        => [1,2,4] -> [1,4,2];
  *                       => swap elements back from pivot=0 and si=2
@@ -291,6 +291,7 @@ function is_identical_sequence(
  * 
  * Now, we have all the permutations, now we need to sort them lexicographically
  * For that we call sortPermutation function.
+ * 
  * 
  * 
  */

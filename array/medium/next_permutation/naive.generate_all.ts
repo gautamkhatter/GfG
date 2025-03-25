@@ -24,11 +24,11 @@ function find_next_permutation_by_generating_all(sequence: number[]): void {
    const all_permutations: number[][] = [];
    build_permutations(all_permutations, sequence, 0);
    sort_permutations(all_permutations);
-   const next_sequence = find_permutation(all_permutations, sequence);
+   const next_sequence = next_permutation(all_permutations, sequence);
    console.log(next_sequence);
 }
 
-function find_permutation(
+function next_permutation(
    all_permutations: number[][],
    sequence: number[]
 ): number[] {
@@ -46,9 +46,7 @@ function find_permutation(
 
 function sort_permutations(all_permutations: number[][]): void {
    all_permutations.sort((permA, permB) => {
-      const min_length = Math.min(permA.length, permB.length);
-
-      for (let element_pos = 0; element_pos < min_length; element_pos++) {
+      for (let element_pos = 0; element_pos < permA.length; element_pos++) {
          if (permA[element_pos] !== permB[element_pos]) {
             return permA[element_pos] - permB[element_pos];
          }
@@ -290,8 +288,48 @@ function is_identical_sequence(
  **                                            to all        to all        to all         to all          to all         to all
  * 
  * Now, we have all the permutations, now we need to sort them lexicographically
- * For that we call sortPermutation function.
+ * For that we call sort function.
+ *       
+ *       First, How JavaScript's sort() uses the comparator function?
+ *          - In JavaScript, the sort() method uses the return value of the comparator function to determine the order:
+ *          - If the function returns a negative number, (a-b) = (-ve), 'a' comes first.
+ *          - If the function returns a positive number, (a-b) = (+ve), 'b' comes first.
+ *          - If the function returns 0, their order remains unchanged.
  * 
+ *    Dry run of sort_permutations(all_permutations)
+ *       Our permutations: [ 
+ *                           [2,4,1], [2,1,4], 
+ *                           [4,2,1], [4,1,2],
+ *                           [1,4,2], [1,2,4] 
+ *                         ];
+ *       We compare two permutations at a time:-
+ *           Comparing => [2,4,1] & [2,1,4]
+ *             (pos=0) => permA[pos] != permB[pos]
+ *                     => permA[0] != permB[0] => 2 != 2 (false)
+ *                     => continue
+ *             (pos=1) => permA[1] != permB[1] => 4 != 1 (true)
+ *                     => return 4-1 (+ve)
+ *                     => [2,1,4] will come first
  * 
+ *    How the Sort Algorithm Uses These Comparisons?
+ *    ----------------------------------------------
+ *       - The sort method calls the comparator multiple times on different pairs of elements. 
+ *         It does not follow a single, linear sequence like “first compare A with B, then with C, …”. 
+ *         Instead, it uses an efficient algorithm (like Timsort or QuickSort) which:
+ *             - Selects pairs to compare: The algorithm might not compare adjacent elements first.
+ *             - Swaps elements: Based on the result, elements might be swapped.
+ *             - Re-compares: Elements may be compared again later in different contexts to ensure the 
+ *               entire array is ordered.
+ *       - Final Sorted Order:
+ *         By repeatedly calling our comparator, the sort algorithm will eventually arrange all elements 
+ *         in the correct order according to our defined comparison logic.
  * 
+ * After this sorting our permutations will be like this: [ 
+ *                                                          [1,2,4], [1,4,2],
+ *                                                          [2,1,4], [2,4,1],
+ *                                                          [4,1,2], [4,2,1] 
+ *                                                        ]
+ * 
+ * Then, our last job is to find the next permutation in the sorted collection of sequences.
+ *    We call next_permutation(all_permutations) - try dry running that yourself.
  */

@@ -9,15 +9,11 @@
  * #### 🧠 Solution:- naive approach - we generate all permutations
  *
  * Eg.1:-
- * input: nums = [1, 2, 4]
- * output: 125
- *
- * Eg.2:-
- * input: nums = [9, 9, 9]
- * output: 1000
+ * input: nums = [2,4,1]
+ * output: [4,1,2]
  *
  *#### Time Complexity: O(n!*nlog(n!));
- *#### Space Complexity: O(1);
+ *#### Space Complexity: O(n!);
  */
 
 function find_next_permutation_by_generating_all(sequence: number[]): void {

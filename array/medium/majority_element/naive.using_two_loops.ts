@@ -59,9 +59,11 @@ function majority_element_using_two_nested_loops(nums: number[]): number {
  *          nums[0] = 1
  *          count = 0
  *             Inner loop: check how many times 1 occurs
+ *               -----------------------
  *                 0  1  2  3  4  5  6
+ *                 |  |  |  |  |  |  |
  *                [1, 1, 2, 1, 3, 5, 1]
- *
+ *               -----------------------
  *                (j=0) => nums[j] == nums[i]
  *                      => nums[0] == nums[0]
  *                      => 1 == 1 => true

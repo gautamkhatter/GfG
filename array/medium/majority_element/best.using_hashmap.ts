@@ -19,11 +19,11 @@
 function majority_element_using_hashmap(nums: number[]) {
    const length = nums.length;
    if (length === 1) return nums[0];
-   const occMap = new Map();
+   const occ_map = new Map();
 
    for (const num of nums) {
-      occMap.set(num, (occMap.get(num) || 0) + 1);
-      if (occMap.get(num) > length / 2) return num;
+      occ_map.set(num, (occ_map.get(num) || 0) + 1);
+      if (occ_map.get(num) > length / 2) return num;
    }
    return -1;
 }
@@ -44,7 +44,7 @@ function majority_element_using_hashmap(nums: number[]) {
  * Function call:- majority_element_using_hashmap(nums);
  * 
  * Function execution:-
- *     •  occMap = {}
+ *     •  occ_map = {}
  *         -----------------------
  *           0  1  2  3  4  5  6
  *           |  |  |  |  |  |  |

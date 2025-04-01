@@ -11,7 +11,7 @@
  * output: 1
  * Explanation: 1 appear 4 times which is more than  7 / 2 times
  *
- *#### Time Complexity: O(n^2);
+ *#### Time Complexity: O(nlogn);
  *#### Space Complexity: O(1);
  */
 

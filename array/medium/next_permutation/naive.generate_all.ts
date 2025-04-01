@@ -18,8 +18,11 @@
 
 function find_next_permutation_by_generating_all(sequence: number[]): void {
    const all_permutations: number[][] = [];
+   // building all the permutations for the given sequence
    build_permutations(all_permutations, sequence, 0);
+   // sorting the permutations in lexicographic order
    sort_permutations(all_permutations);
+   // finding the next sequence in the sorted order of permutations
    const next_sequence = next_permutation(all_permutations, sequence);
    console.log(next_sequence);
 }
@@ -28,11 +31,16 @@ function next_permutation(
    all_permutations: number[][],
    sequence: number[]
 ): number[] {
-   for (let seq_index = 0; seq_index < all_permutations.length; seq_index++) {
-      if (is_identical_sequence(all_permutations[seq_index], sequence)) {
-         if (seq_index < all_permutations.length - 1) {
+   const length = all_permutations.length;
+   for (let seq_index = 0; seq_index < length; seq_index++) {
+      const is_identical = is_identical_sequence(
+         all_permutations[seq_index],
+         sequence
+      );
+      if (is_identical) {
+         if (seq_index < length - 1) {
             return [...all_permutations[seq_index + 1]];
-         } else if (seq_index === all_permutations.length - 1) {
+         } else if (seq_index === length - 1) {
             return [...all_permutations[0]];
          }
       }
@@ -53,35 +61,35 @@ function sort_permutations(all_permutations: number[][]): void {
 
 function build_permutations(
    all_permutations: number[][],
-   working_sequence: number[],
+   given_sequence: number[],
    pivot_position: number
 ) {
    // complete permutation found when pivot reaches final element
-   if (pivot_position === working_sequence.length - 1) {
-      all_permutations.push([...working_sequence]);
+   if (pivot_position === given_sequence.length - 1) {
+      all_permutations.push([...given_sequence]);
    }
 
    // trying every possible element at pivot position
    for (
-      let swap_el_pos = pivot_position;
-      swap_el_pos < working_sequence.length;
-      swap_el_pos++
+      let swap_pos = pivot_position;
+      swap_pos < given_sequence.length;
+      swap_pos++
    ) {
-      [working_sequence[pivot_position], working_sequence[swap_el_pos]] = [
-         working_sequence[swap_el_pos],
-         working_sequence[pivot_position],
+      [given_sequence[pivot_position], given_sequence[swap_pos]] = [
+         given_sequence[swap_pos],
+         given_sequence[pivot_position],
       ];
       // after we fix the pivot position we continue to build the rest of the permutation
       build_permutations(
          all_permutations,
-         working_sequence,
+         given_sequence,
          pivot_position + 1
       );
 
       // before we try the next permutation we have to restore the original order of the array
-      [working_sequence[pivot_position], working_sequence[swap_el_pos]] = [
-         working_sequence[swap_el_pos],
-         working_sequence[pivot_position],
+      [given_sequence[pivot_position], given_sequence[swap_pos]] = [
+         given_sequence[swap_pos],
+         given_sequence[pivot_position],
       ];
    }
 }
@@ -97,6 +105,8 @@ function is_identical_sequence(
    return true;
 }
 
+const sequence = [2, 1, 4];
+console.log(find_next_permutation_by_generating_all(sequence));
 /**
  * ### 💡 Idea behind the approach:-
  *
@@ -117,15 +127,15 @@ function is_identical_sequence(
  * Function execution:
  **    aliases used: pc = all_permutations
  **                   s = sequence       
- **                  ws = working_sequence
+ **                  gs = given_sequence
  **                  pivot = pivot_position
  **                  si = swapElPosition / swap index
  * 
  * Inside the findNextPermutationByGeneratingAll() function
  **         pc = []
  **         s = [2,4,1]
- ** Call • buildAllPermutations(pc, ws, 0):=
-            => base case => if(pivot === ws.length-1) 
+ ** Call • buildAllPermutations(pc, gs, 0):=
+            => base case => if(pivot === gs.length-1) 
  *                                 0 === 2 => false;
  *          Iterations:=
  *               si = pivot => si = 0 
@@ -135,7 +145,7 @@ function is_identical_sequence(
  *                          -----------------------------
  **                           [pivot = 1, with 2 fixed]
  *                          -----------------------------
- *                           => base case => if(pivot === ws.length-1) 
+ *                           => base case => if(pivot === gs.length-1) 
  *                                                  1 === 2 => false;
  *                                        => Iterations:= 
  *                                              si = pivot = 1
@@ -145,7 +155,7 @@ function is_identical_sequence(
  *                                                          ------------------------------                     |
  **                                                           [pivot = 2, with 2,4 fixed]                      |
  *                                                          ------------------------------                     |
- *                                                            => base case = if(pivot === ws.length-1)         |
+ *                                                            => base case = if(pivot === gs.length-1)         |
  *                                                                                  2 === 2 => true            |  
  *                                                            => pc.push([2,4,1]);                             |
  **                                                           => pc = [ [2,4,1] ]                              |
@@ -159,7 +169,7 @@ function is_identical_sequence(
  *                                                          ------------------------------                      |   
  **                                                           [pivot = 2, with 2,1 fixed]                       |
  *                                                          ------------------------------                      |
- *                                                             => base condition = if(pivot === ws.length-1)    |
+ *                                                             => base condition = if(pivot === gs.length-1)    |
  *                                                                                        2 === 2 => true       |
  *                                                             => pc.push([2,1,4])                              |
  **                                                            => pc = [ [2,4,1], [2,1,4] ];                    |
@@ -175,7 +185,7 @@ function is_identical_sequence(
  *                          -----------------------------
  **                           [pivot = 1, with 4 fixed]
  *                          -----------------------------
- *                           => base case => if(pivot === ws.length-1) 
+ *                           => base case => if(pivot === gs.length-1) 
  *                                                  1 === 2 => false;
  *                                        => Iterations:= 
  *                                              si = pivot = 1
@@ -185,7 +195,7 @@ function is_identical_sequence(
  *                                                          ------------------------------                     |
  **                                                           [pivot = 2, with 4,2 fixed]                      |
  *                                                          ------------------------------                     |
- *                                                            => base case = if(pivot === ws.length-1)         |   
+ *                                                            => base case = if(pivot === gs.length-1)         |   
  *                                                                                  2 === 2 => true            |
  *                                                            => pc.push([4,2,1]);                             |
  **                                                           => pc = [ [2,4,1], [2,1,4],                      |
@@ -201,7 +211,7 @@ function is_identical_sequence(
  *                                                          ------------------------------                     |
  **                                                           [pivot = 2, with 4,1 fixed]                      |
  *                                                          ------------------------------                     |
- *                                                             => base condition = if(pivot === ws.length-1)   |
+ *                                                             => base condition = if(pivot === gs.length-1)   |
  *                                                                                        2 === 2 => true      |
  *                                                             => pc.push([4,1,2])                             |
  **                                                            => pc = [ [2,4,1], [2,1,4]                      |
@@ -219,7 +229,7 @@ function is_identical_sequence(
  *                          -----------------------------
  **                           [pivot = 1, with 1 fixed]
  *                          -----------------------------
- *                           => base case => if(pivot === ws.length-1) 
+ *                           => base case => if(pivot === gs.length-1) 
  *                                                  1 === 2 => false;
  *                                        => Iterations:= 
  *                                              si = pivot = 1
@@ -229,7 +239,7 @@ function is_identical_sequence(
  *                                                          ------------------------------                   | 
  **                                                           [pivot = 2, with 1,4 fixed]                    |
  *                                                          ------------------------------                   |
- *                                                            => base case = if(pivot === ws.length-1)       |
+ *                                                            => base case = if(pivot === gs.length-1)       |
  *                                                                                  2 === 2 => true          |
  *                                                            => pc.push([1,4,2]);                           |
  **                                                           => pc = [ [2,4,1], [2,1,4],                    |
@@ -246,7 +256,7 @@ function is_identical_sequence(
  *                                                          ------------------------------                    |
  **                                                           [pivot = 2, with 4,1 fixed]                     |
  *                                                          ------------------------------                    |
- *                                                             => base condition = if(pivot === ws.length-1)  |
+ *                                                             => base condition = if(pivot === gs.length-1)  |
  *                                                                                        2 === 2 => true     |
  *                                                             => pc.push([1,2,4])                            |
  **                                                            => pc = [ [2,4,1], [2,1,4]                     |

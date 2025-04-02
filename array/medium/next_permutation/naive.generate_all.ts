@@ -17,42 +17,42 @@
  */
 
 function find_next_permutation_by_generating_all(sequence: number[]): void {
-   const all_permutations: number[][] = [];
+   const permutations: number[][] = [];
    // building all the permutations for the given sequence
-   build_permutations(all_permutations, sequence, 0);
+   build_permutations(permutations, sequence, 0);
    // sorting the permutations in lexicographic order
-   sort_permutations(all_permutations);
+   sort_permutations(permutations);
    // finding the next sequence in the sorted order of permutations
-   const next_sequence = next_permutation(all_permutations, sequence);
+   const next_sequence = next_permutation(permutations, sequence);
    console.log(next_sequence);
 }
 
 function next_permutation(
-   all_permutations: number[][],
+   permutations: number[][],
    sequence: number[]
 ): number[] {
-   const length = all_permutations.length;
-   for (let seq_index = 0; seq_index < length; seq_index++) {
+   const length = permutations.length;
+   for (let index = 0; index < length; index++) {
       const is_identical = is_identical_sequence(
-         all_permutations[seq_index],
+         permutations[index],
          sequence
       );
       if (is_identical) {
-         if (seq_index < length - 1) {
-            return [...all_permutations[seq_index + 1]];
-         } else if (seq_index === length - 1) {
-            return [...all_permutations[0]];
+         if (index < length - 1) {
+            return [...permutations[index + 1]];
+         } else if (index === length - 1) {
+            return [...permutations[0]];
          }
       }
    }
    return [...sequence];
 }
 
-function sort_permutations(all_permutations: number[][]): void {
-   all_permutations.sort((permA, permB) => {
-      for (let element_pos = 0; element_pos < permA.length; element_pos++) {
-         if (permA[element_pos] !== permB[element_pos]) {
-            return permA[element_pos] - permB[element_pos];
+function sort_permutations(permutations: number[][]): void {
+   permutations.sort((permA, permB) => {
+      for (let position = 0; position < permA.length; position++) {
+         if (permA[position] !== permB[position]) {
+            return permA[position] - permB[position];
          }
       }
       return permA.length - permB.length;
@@ -60,13 +60,13 @@ function sort_permutations(all_permutations: number[][]): void {
 }
 
 function build_permutations(
-   all_permutations: number[][],
+   permutations: number[][],
    given_sequence: number[],
    pivot_position: number
 ) {
    // complete permutation found when pivot reaches final element
    if (pivot_position === given_sequence.length - 1) {
-      all_permutations.push([...given_sequence]);
+      permutations.push([...given_sequence]);
    }
 
    // trying every possible element at pivot position
@@ -81,7 +81,7 @@ function build_permutations(
       ];
       // after we fix the pivot position we continue to build the rest of the permutation
       build_permutations(
-         all_permutations,
+         permutations,
          given_sequence,
          pivot_position + 1
       );
@@ -125,7 +125,7 @@ console.log(find_next_permutation_by_generating_all(sequence));
  * Function call:- findNextPermutationByGeneratingAll(sequence);
  * 
  * Function execution:
- **    aliases used: pc = all_permutations
+ **    aliases used: pc = permutations
  **                   s = sequence       
  **                  gs = given_sequence
  **                  pivot = pivot_position
@@ -302,7 +302,7 @@ console.log(find_next_permutation_by_generating_all(sequence));
  *          - If the function returns a positive number, (a-b) = (+ve), 'b' comes first.
  *          - If the function returns 0, their order remains unchanged.
  * 
- *    Dry run of sort_permutations(all_permutations)
+ *    Dry run of sort_permutations(permutations)
  *       Our permutations: [ 
  *                           [2,4,1], [2,1,4], 
  *                           [4,2,1], [4,1,2],
@@ -337,5 +337,5 @@ console.log(find_next_permutation_by_generating_all(sequence));
  *                                                        ]
  * 
  * Then, our last job is to find the next permutation in the sorted collection of sequences.
- *    We call next_permutation(all_permutations) - try dry running that yourself.
+ *    We call next_permutation(permutations) - try dry running that yourself.
  */

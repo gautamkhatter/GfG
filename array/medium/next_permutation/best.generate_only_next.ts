@@ -14,16 +14,19 @@
 function find_next_permutation_using_one_loop(sequence: number[]): void {
    const length = sequence.length;
    let pivot = -1;
+
    for (let currentIndex = length - 2; currentIndex >= 0; currentIndex--) {
       if (sequence[currentIndex] < sequence[currentIndex + 1]) {
          pivot = currentIndex;
          break;
       }
    }
+
    if (pivot === -1) {
       sequence.reverse();
       return;
    }
+
    for (
       let successorIndex = length - 1;
       successorIndex > pivot;
@@ -37,8 +40,10 @@ function find_next_permutation_using_one_loop(sequence: number[]): void {
          break;
       }
    }
+
    let left = pivot + 1;
    let right = length - 1;
+   
    while (left < right) {
       [sequence[left], sequence[right]] = [sequence[right], sequence[left]];
       left++;

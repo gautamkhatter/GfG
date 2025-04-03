@@ -29,11 +29,9 @@ function next_permutation(
    sequence: number[]
 ): number[] {
    const length = permutations.length;
+
    for (let index = 0; index < length; index++) {
-      const is_identical = is_identical_sequence(
-         permutations[index],
-         sequence
-      );
+      const is_identical = is_identical_sequence(permutations[index], sequence);
       if (is_identical) {
          if (index < length - 1) {
             return [...permutations[index + 1]];
@@ -76,12 +74,9 @@ function build_permutations(
          given_sequence[swap_pos],
          given_sequence[pivot_position],
       ];
+      
       // after we fix the pivot position we continue to build the rest of the permutation
-      build_permutations(
-         permutations,
-         given_sequence,
-         pivot_position + 1
-      );
+      build_permutations(permutations, given_sequence, pivot_position + 1);
 
       // before we try the next permutation we have to restore the original order of the array
       [given_sequence[pivot_position], given_sequence[swap_pos]] = [

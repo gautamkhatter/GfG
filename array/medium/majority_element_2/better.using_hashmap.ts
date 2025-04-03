@@ -43,6 +43,14 @@ console.log(majority_element_using_hashmap2(nums2));
  * The idea behind this approach is simple, we use a hashmap to count the frequency
  * of each element. After counting we iterate over the hashmap and check for each
  * element's frequency is greater than floor(n/3).
+ * 
+ * Now there can only be at most two majority elements. Why?
+ *    - Because a majority element must appear more than floor(n/3) times in the array.
+ *    - As such, the majority element occupies more than 1/3 of array's space.
+ *    - If entire array is 1/3 + 1/3 + 1/3 => 3/3 = 1 or 100%.
+ *    - At most two elements can occupy more than 1/3 of the array, because if there's 
+ *      more than two elements that occupy more than 1/3 of the array, these elements will
+ *      exceed the array size and that is not possible.
  *
  * ### 🤯 Dry run of the code:-
  *

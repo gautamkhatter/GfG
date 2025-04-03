@@ -18,6 +18,7 @@
 function second_largest_using_sorting(nums: number[]): number {
    // sorting the given array in non decreasing order
    nums.sort((a, b) => a - b);
+   
    // array may contain duplicate elements so we are traversing
    // from the second last element to find the second largest element.
    for (let i = nums.length - 2; i >= 0; i--) {

@@ -11,7 +11,7 @@
  * Eg.2:-
  * input: nums =  [-10, -3, -5, -6, -20],
  * output: -90
- * 
+ *
  * Time Complexity: O(n);
  * Space Complexity: O(1);
  */
@@ -19,9 +19,8 @@
 function max_product_triplet_by_being_greedy(nums: number[]): number {
    let largest = -Infinity,
       second_largest = -Infinity,
-      third_largest = -Infinity;
-
-   let minimum = Infinity,
+      third_largest = -Infinity,
+      minimum = Infinity,
       second_minimum = Infinity;
 
    for (let i = 0; i < nums.length; i++) {
@@ -32,12 +31,14 @@ function max_product_triplet_by_being_greedy(nums: number[]): number {
          second_largest = largest;
          largest = nums[i];
       }
+
       // checking if the element is greater than sl
       // then updating sl and tl values
       else if (nums[i] > second_largest) {
          third_largest = second_largest;
          second_largest = nums[i];
       }
+
       // if the element is greater than sl and smaller than both
       // l and sl
       else if (nums[i] > third_largest) {
@@ -50,6 +51,7 @@ function max_product_triplet_by_being_greedy(nums: number[]): number {
          second_minimum = minimum;
          minimum = nums[i];
       }
+
       // we also find the second minimum because we need
       // two negatives to make it positive
       else if (nums[i] < second_minimum) {

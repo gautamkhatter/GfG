@@ -25,6 +25,7 @@
 function max_consecutive_count_using_loop(nums: number[]): number {
    let max_consecutive_count = 0,
       current_count = 1;
+   
    for (let i = 1; i < nums.length; i++) {
       if (nums[i] === nums[i - 1]) {
          // if previous element is same as the current one
@@ -37,6 +38,7 @@ function max_consecutive_count_using_loop(nums: number[]): number {
          current_count = 1;
       }
    }
+   
    return Math.max(max_consecutive_count, current_count);
 }
 

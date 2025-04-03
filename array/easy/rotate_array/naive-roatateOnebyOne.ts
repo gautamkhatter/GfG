@@ -30,11 +30,13 @@ function rotate_array_one_element_each(
    for (let i = 0; i < left_rotate_count; i++) {
       // we take the current first element
       let first_element = nums[0];
+
       // shift all the remaining elements 
       // to the left by one position
       for (let j = 0; j < nums.length - 1; j++) {
          nums[j] = nums[j + 1];
       }
+      
       // place the first element as the last
       nums[nums.length - 1] = first_element;
    }

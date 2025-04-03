@@ -27,11 +27,13 @@ function third_largest_by_using_one_loop(nums: number[]): number {
          second_largest = largest;
          largest = nums[i];
       }
+
       // update the values if the current element is greater than second
       else if (nums[i] > second_largest) {
          third_largest = second_largest;
          second_largest = nums[i];
       }
+         
       // last check if the current element is greater than third_largest
       // but smaller then both second and largest values.
       else if (nums[i] > third_largest) {

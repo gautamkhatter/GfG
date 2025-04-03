@@ -19,18 +19,22 @@ function move_zeros_to_end_using_temp_array(nums: number[]): void {
    // creating a pointer to track of the index from where we start
    // filling the zeros in temp array
    let temp_index = 0;
+
    // creating a temporary array of the same size as nums
    const temp = new Array(nums.length);
+
    // copying all the non zero elements from nums to temp 
    for (let i = 0; i < nums.length; i++) {
       if (nums[i] !== 0) {
          temp[temp_index++] = nums[i]; 
       }
    }
+
    // filling the remaining positions in temp array with 0
    for (let i = temp_index; i < temp.length; i++) {
       temp[i] = 0;
    }
+   
    // copying all the elements from temp array to input array
    for (let i = 0; i < nums.length; i++) {
       nums[i] = temp[i];

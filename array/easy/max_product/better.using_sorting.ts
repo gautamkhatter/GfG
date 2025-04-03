@@ -20,6 +20,7 @@ function max_product_triplet_using_sorting(nums: number[]): number {
    // sorting the array in non-decreasing order 
    // (ascending order which allows for duplicate elements)
    nums.sort((a, b) => a - b);
+   
    // Checking if array contains -ve numbers then maybe 
    // first two elements can become positive by multiplying them.
    return Math.max(

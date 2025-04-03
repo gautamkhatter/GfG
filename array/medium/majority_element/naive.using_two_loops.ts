@@ -16,16 +16,20 @@
 function majority_element_using_two_nested_loops(nums: number[]): number {
    let length = nums.length;
    if (length === 1) return nums[0];
+
    // loop where each element is considered a majority element
    for (let majority = 0; majority < length; majority++) {
       let count = 0;
+      
       // inner loop to count the occurrences of nums[majority]
       for (let occ = 0; occ < length; occ++) {
          if (nums[majority] === nums[occ]) count++;
       }
+
       // check if count of nums[majority] is more than half the size of the array
       if (count > Math.floor(length / 2)) return nums[majority];
    }
+
    return -1;
 }
 

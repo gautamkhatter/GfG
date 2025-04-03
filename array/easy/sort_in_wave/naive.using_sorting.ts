@@ -21,6 +21,7 @@
 
 function sort_in_wave_using_sorting(nums: number[]): void {
    nums.sort((a, b) => a - b);
+   
    for (let i = 0; i < nums.length; i += 2) {
       let temp = nums[i];
       nums[i] = nums[i+1];

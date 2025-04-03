@@ -39,11 +39,13 @@ function rotate_array_using_temp_array(
    for (let i = 0; i < length - left_rotate_count; i++) {
       temp[i] = nums[i + left_rotate_count];
    }
+
    // now copy those 'k' elements after the position
    // of elements that were copied before
    for (let i = 0; i < left_rotate_count; i++) {
       temp[length - left_rotate_count + i] = nums[i];
    }
+   
    // now copy back elements from temp to nums
    for (let i = 0; i < length; i++) {
       nums[i] = temp[i];

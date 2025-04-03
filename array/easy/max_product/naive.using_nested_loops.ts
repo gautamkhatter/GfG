@@ -18,6 +18,7 @@
 
 function max_product_triplet_using_nested_loops(nums: number[]): number {
    let max_product = -Infinity;
+
    // 'i' is going till before the last two elements because j & k will already 
    // take care of last two elements
    for (let i = 0; i < nums.length - 2; i++) {
@@ -29,6 +30,7 @@ function max_product_triplet_using_nested_loops(nums: number[]): number {
          }  
       }
    }
+   
    return max_product;
 }
 

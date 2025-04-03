@@ -19,6 +19,7 @@ function third_largest_using_sorting(nums: number[]): number {
    // checking for edge cases
    if (nums.length === 0) return -1;
    if (nums.length === 1) return nums[0];
+   
    // sorting elements in non-decreasing order
    nums.sort((a, b) => a - b);
    return nums[nums.length - 3];

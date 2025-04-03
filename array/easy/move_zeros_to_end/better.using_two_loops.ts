@@ -18,6 +18,7 @@
 function move_zeros_to_end_using_two_loops(nums: number[]): void {
    // count tracks where should we put the non-zero element that comes next
    let count = 0;
+   
    // replace the zero element position with a non-zero element when encountering it
    for (let i = 0; i < nums.length; i++) {
       if (nums[i] !== 0) {
@@ -25,6 +26,7 @@ function move_zeros_to_end_using_two_loops(nums: number[]): void {
          count++;
       }
    }
+
    // fill the remaining places with 0's
    while (count < nums.length) {
       nums[count] = 0;

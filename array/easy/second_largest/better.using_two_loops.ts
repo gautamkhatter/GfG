@@ -25,6 +25,7 @@ function second_largest_using_two_loops(nums: number[]): number {
          largest = nums[i];
       }
    }
+   
    // finding the second largest element in the given array;
    for (let i = 0; i < nums.length; i++) {
       if (nums[i] > second_largest && nums[i] !== largest) {

@@ -20,19 +20,18 @@
  */
 
 function reverse_array_in_groups(nums: number[], group_size: number): void {
-   // iterating over the array with the fixed group_size (k)
    for (let i = 0; i < nums.length; i += group_size) {
       let left_pointer = i;
       // the main logic is determining the right_pointer pointer position
       // and also checking that it remains in the array bounds
       let right_pointer = Math.min(i + group_size - 1, nums.length - 1);
+
       while (left_pointer < right_pointer) {
-         // this is array destructuring and assigning logic that is
-         // a language feature that JS provides
          [nums[left_pointer], nums[right_pointer]] = [
             nums[right_pointer],
             nums[left_pointer],
          ];
+
          left_pointer++;
          right_pointer--;
       }

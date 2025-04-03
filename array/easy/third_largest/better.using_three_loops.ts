@@ -24,12 +24,14 @@ function third_largest_by_using_three_loops(nums: number[]): number {
    for (let i = 0; i < nums.length; i++) {
       if (nums[i] > largest) largest = nums[i];
    }
+
    // finding the second largest element
    for (let i = 0; i < nums.length; i++) {
       if (nums[i] > second_largest && nums[i] < largest) {
          second_largest = nums[i];
       }
    }
+   
    // finding the third largest element
    for (let i = 0; i < nums.length; i++) {
       if (nums[i] > third_largest && nums[i] < second_largest) {

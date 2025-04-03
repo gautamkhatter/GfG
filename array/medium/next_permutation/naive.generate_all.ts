@@ -13,10 +13,12 @@
 
 function find_next_permutation_by_generating_all(sequence: number[]): void {
    const permutations: number[][] = [];
+
    // building all the permutations for the given sequence
    build_permutations(permutations, sequence, 0);
    // sorting the permutations in lexicographic order
    sort_permutations(permutations);
+
    // finding the next sequence in the sorted order of permutations
    const next_sequence = next_permutation(permutations, sequence);
    console.log(next_sequence);

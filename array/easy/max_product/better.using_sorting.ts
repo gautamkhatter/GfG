@@ -1,9 +1,8 @@
 /**
- * ### 🤔 Question:-
- * Given an array of integers nums[], the task is to move all the zeros in the array
+ * #### Given an array of integers nums[], the task is to move all the zeros in the array
  * to the end of the array while maintaining the relative order of all non-zero elements.
  *
- * #### 🧠 Solution:- better approach - using sorting
+ * Solution:- better approach - using sorting
  *
  * Eg.1:-
  * input: nums = [10, 3, 5, 6, 20],
@@ -13,8 +12,8 @@
  * input: nums =  [-10, -3, -5, -6, -20],
  * output: -90
  * 
- *#### Time Complexity: O(nlogn);
- *#### Space Complexity: O(1);
+ * Time Complexity: O(nlogn);
+ * Space Complexity: O(1);
  */
 
 function max_product_triplet_using_sorting(nums: number[]): number {

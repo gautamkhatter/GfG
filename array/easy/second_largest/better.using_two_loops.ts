@@ -1,23 +1,19 @@
 /**
- * ### 🤔 Question:-
- * Given an array of positive integers arr[] of size n, the task is to 
- * find second largest distinct element in the array. Note: If the second 
- * largest element does not exist, return -1.
+ * #### Given an array of positive integers arr[] of size n, the task is to find second largest distinct element in the array. Note: If the second largest element does not exist, return -1.
  * 
- * #### 🧠 Solution:- Better approach - using two loops
+ * Solution:- better approach - using two loops
  * 
  * Eg.1:-
  * input: nums[] = [12, 35, 1, 10, 34, 1],
  * output: 34
  * 
  * Eg.2:-
- * input: arr[] = [10, 10, 10],
+ * input: nums[] = [10, 10, 10],
  * output: -1
  * 
- *#### Time Complexity: O(2n) = O(n);
- *####  Space Complexity: O(1);
+ * Time Complexity: O(2n) => O(n);
+ * Space Complexity: O(1);
 */
-
 
 function second_largest_using_two_loops(nums: number[]): number {
    let largest = -Infinity;

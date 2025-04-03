@@ -1,18 +1,16 @@
 /**
- * ### 🤔 Question:-
- * Given an array arr. Find the majority element in the array. If no majority exists,
- * return -1. A majority element in an array is an element that appears strictly more
- * than arr.size() / 2 times in the array.
+ * #### Given an array arr. Find the majority element in the array. If no majority exists, return -1. A majority element in an array is an element that appears strictly more than arr.size() / 2 times in the array.
  *
- * #### 🧠 Solution:- best expected approach - using Moore's voting algorithm.
+ * Solution:- best expected approach - using Moore's voting algorithm.
  *
  * Eg.1:-
  * input: nums = [1, 1, 2, 1, 3, 5, 1]
  * output: 1
- * Explanation: 1 appear 4 times which is more than  7 / 2 times
+ * 
+ * Explanation: 1 appear 4 times which is more than  7 / 2 times 
  *
- *#### Time Complexity: O(n);
- *#### Space Complexity: O(1);
+ * Time Complexity: O(n);
+ * Space Complexity: O(1);
  */
 
 function majority_element_using_moore_voting_algorithm(nums: number[]) {

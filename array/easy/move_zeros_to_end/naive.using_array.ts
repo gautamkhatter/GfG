@@ -1,9 +1,7 @@
 /**
- * ### 🤔 Question:-
- * Given an array of integers nums[], the task is to move all the zeros in the array
- * to the end of the array while maintaining the relative order of all non-zero elements.
+ * #### Given an array of integers nums[], the task is to move all the zeros in the array to the end of the array while maintaining the relative order of all non-zero elements.
  *
- * #### 🧠 Solution:- naive approach - using temp array
+ * Solution:- naive approach - using temporary array
  *
  * Eg.1:-
  * input: nums = [1, 2, 0, 4, 3, 0, 5, 0],
@@ -13,8 +11,8 @@
  * input: nums = [10, 20, 30],
  * output: [10, 20, 30]
  * 
- *#### Time Complexity: O(2n) = O(n);
- *#### Space Complexity: O(n);
+ * Time Complexity: O(2n) = O(n);
+ * Space Complexity: O(n);
  */
 
 function move_zeros_to_end_using_temp_array(nums: number[]): void {

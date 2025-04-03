@@ -1,9 +1,7 @@
 /**
- * ### 🤔 Question:-
- * Given an array of n integers, the task is to find the third largest element. 
- * All the elements in the array are distinct integers. 
+ * #### Given an array of n integers, the task is to find the third largest element. All the elements in the array are distinct integers. 
  * 
- * #### 🧠 Solution:- better approach - using three loops
+ * Solution:- better approach - using three loops
  * 
  * Eg.1:-
  * input: nums[] = [1, 14, 2, 16, 10, 20],
@@ -13,8 +11,8 @@
  * input: nums[] = [19, -10, 20, 14, 2, 16, 10],
  * output: 16
  * 
- *#### Time Complexity: O(3n) = O(n);
- *#### Space Complexity: O(1);
+ * Time Complexity: O(3n) => O(n);
+ * Space Complexity: O(1);
 */
 
 function third_largest_by_using_three_loops(nums: number[]): number {

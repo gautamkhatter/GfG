@@ -1,18 +1,16 @@
 /**
- * ### 🤔 Question:-
- * Given an array arr. Find the majority element in the array. If no majority exists,
- * return -1. A majority element in an array is an element that appears strictly more
- * than arr.size() / 2 times in the array.
+ * #### Given an array arr. Find the majority element in the array. If no majority exists, return -1. A majority element in an array is an element that appears strictly more than arr.size() / 2 times in the array.
  *
- * #### 🧠 Solution:- better approach - using sorting
+ * Solution:- better approach - using sorting
  *
  * Eg.1:-
  * input: nums = [1, 1, 2, 1, 3, 5, 1]
  * output: 1
- * Explanation: 1 appear 4 times which is more than  7 / 2 times
+ * 
+ * Explanation: 1 appear 4 times which is more than  7 / 2 times 
  *
- *#### Time Complexity: O(nlogn);
- *#### Space Complexity: O(1);
+ * Time Complexity: O(nlogn);
+ * Space Complexity: O(n);
  */
 
 function majority_element_using_sorting(nums: number[]) {

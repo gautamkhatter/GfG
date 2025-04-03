@@ -1,9 +1,8 @@
 /**
- * ### 🤔 Question:-
- * Given an array nums[] consisting of only 0’s and 1’s, the task is to find
+ * #### Given an array nums[] consisting of only 0’s and 1’s, the task is to find
  * the count of a maximum number of consecutive 1’s or 0’s present in the array.
  *
- * #### 🧠 Solution:- best approach - using loop
+ * Solution:- best approach - using loop
  *
  * Eg.1:-
  * input: nums = [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1],
@@ -15,12 +14,12 @@
  * Eg.2:-
  * input: nums = [0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
  * output: 2
- *
+
  * Explanation: the maximum number of consecutive 0’s
  * in the array is 2 from index 0-1.
  *
- *#### Time Complexity: O(n);
- *#### Space Complexity: O(1);
+ * Time Complexity: O(n);
+ * Space Complexity: O(1);
  */
 
 function max_consecutive_count_using_loop(nums: number[]): number {

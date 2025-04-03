@@ -1,11 +1,7 @@
 /**
- * ### 🤔 Question:-
- * We are given a non-negative number represented as an array of digits. Our task 
- * is to add 1 to the number (increment the number represented by the digits by 1). 
- * The digits are stored such that the most significant digit is the first element 
- * of the array.
+ * #### We are given a non-negative number represented as an array of digits. Our task is to add 1 to the number (increment the number represented by the digits by 1). The digits are stored such that the most significant digit is the first element of the array.
  *
- * #### 🧠 Solution:- naive approach - using carry method
+ * Solution:- best approach - using carry method
  *
  * Eg.1:-
  * input: nums = [1, 2, 4]
@@ -15,8 +11,8 @@
  * input: nums = [9, 9, 9]
  * output: 1000
  *
- *#### Time Complexity: O(n);
- *#### Space Complexity: O(1);
+ * Time Complexity: O(n);
+ * Space Complexity: O(1);
  */
 
 function add_one_using_carry(nums: number[]) {

@@ -1,9 +1,7 @@
 /**
- * ### 🤔 Question:-
- * Given an array of integers nums[] of size n, the task is to rotate the
- * array elements to the left by k positions.
+ * #### Given an array of integers nums[] of size n, the task is to rotate the array elements to the left by k positions.
  *
- * #### 🧠 Solution:- better approach - using temp array
+ * Solution:- better approach - using a temporary array
  *
  * Eg.1:-
  * input: nums = [1, 2, 3, 4, 5, 6], k=2
@@ -21,8 +19,8 @@
  * After third left rotation, nums = [1, 2, 3],
  * After fourth left rotation, nums = [2, 3, 1],
  *
- *#### Time Complexity: O(n);
- *#### Space Complexity: O(n);
+ * Time Complexity: O(n);
+ * Space Complexity: O(n);
  */
 
 function rotate_array_using_temp_array(

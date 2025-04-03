@@ -1,23 +1,22 @@
 /**
- * ### 🤔 Question:-
- * Given an unsorted array of integers, sort the array into a wave array.
+ * #### Given an unsorted array of integers, sort the array into a wave array.
  *
- * #### 🧠 Solution:- naive approach - using sorting
+ * Solution:- naive approach - using sorting
  *
  * Eg.1:-
  * input: nums = [10, 5, 6, 3, 2, 20, 100, 80]
- *          l  s  l  s   l   s   l    s
- * output: [3, 2, 6, 5, 20, 10, 100, 80];
+ * output: [10, 5, 6, 2, 20, 3, 100, 80] 
  *
- * Explanation: here you can see [3, 2, 6, 5, 20, 10, 100, 80], first element is 
+ * Explanation: here you can see {10, 5, 6, 2, 20, 3, 100, 80} first element is 
  * larger than the second, and the same thing is repeated again and again.
- * (large element – small element- large element) or. 
- * (small element - larger element – small element) are
- * acceptable answers, all we need is to make sure this patterns
+ * 
+ * (large element – small element- large element) or
+ * (small element - larger element – small element)
+ * are acceptable answers, all we need is to make sure this patterns
  * holds for the entire array.
  *  
- *#### Time Complexity: O(nlogn)
- *#### Space Complexity: O(1);
+ * Time Complexity: O(nlogn)
+ * Space Complexity: O(1);
 */
 
 function sort_in_wave_using_sorting(nums: number[]): void {

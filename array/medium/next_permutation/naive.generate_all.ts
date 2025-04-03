@@ -1,19 +1,14 @@
 /**
- * ### 🤔 Question:-
- * Given an array of numbers, rearrange them
- * to create the next sequence that would appear in dictionary order.
- * For example, [1,2,3] → [1,3,2], or [2,3,1] → [3,1,2]. If the array
- * is already in its largest possible arrangement (like [3,2,1]), return
- * the smallest possible arrangement instead ([1,2,3]).
+ * #### Given an array of numbers, rearrange them to create the next sequence that would appear in dictionary order.For example, [1,2,3] → [1,3,2], or [2,3,1] → [3,1,2]. If the array is already in its largest possible arrangement (like [3,2,1]), return the smallest possible arrangement instead ([1,2,3]).
  *
- * #### 🧠 Solution:- naive approach - we generate all permutations
+ * Solution:- naive approach - we generate all permutations.
  *
  * Eg.1:-
  * input: nums = [2,4,1]
  * output: [4,1,2]
  *
- *#### Time Complexity: O(n!*nlog(n!));
- *#### Space Complexity: O(n!);
+ * Time Complexity: O(n!*nlog(n!));
+ * Space Complexity: O(n!);
  */
 
 function find_next_permutation_by_generating_all(sequence: number[]): void {

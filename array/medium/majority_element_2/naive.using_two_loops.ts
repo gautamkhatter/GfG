@@ -1,11 +1,7 @@
 /**
- * ### 🤔 Question:-
- * Given an array arr[] consisting of n integers, the task is to find all the array
- * elements which occurs more than floor(n/3) times.
+ * #### Given an array arr[] consisting of n integers, the task is to find all the array elements which occurs more than floor(n/3) times. Note: The returned array of majority elements should be sorted.
  *
- * Note: The returned array of majority elements should be sorted.
- *
- * #### 🧠 Solution:- naive approach - using two nested loops
+ * Solution:- naive approach - using two nested loops
  *
  * Eg.1:-
  * input: nums = [2, 2, 3, 1, 3, 2, 1, 1]
@@ -13,8 +9,8 @@
  *
  * Explanation: The frequency of 1 and 2 is 3, which is more than floor n/3 (8/3 = 2).
  *
- *#### Time Complexity: O(n^2);
- *#### Space Complexity: O(1);
+ * Time Complexity: O(n^2);
+ * Space Complexity: O(1);
  */
 
 function majority_element_using_nested_loops(nums: number[]) {

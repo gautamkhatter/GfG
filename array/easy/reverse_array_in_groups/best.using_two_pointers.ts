@@ -1,9 +1,7 @@
 /**
- * ### 🤔 Question:-
- * Given an array arr[] and an integer k (group size), the task is to reverse every subarray
- * formed by consecutive K (group) elements.
+ * #### Given an array arr[] and an integer k (group size), the task is to reverse every subarray formed by consecutive K (group) elements.
  *
- * #### 🧠 Solution:- best approach - using two pointers
+ * Solution:- best approach - using two pointers
  *
  * Eg.1:-
  * input: nums = [1, 2, 3, 4, 5, 6, 7, 8, 9], K = 3,
@@ -17,8 +15,8 @@
  * input: nums = [1, 2, 3, 4, 5, 6, 7, 8], K = 10,
  * output: [8, 7, 6, 5, 4, 3, 2, 1]
  *
- *#### Time Complexity: O(n);
- *#### Space Complexity: O(1);
+ * Time Complexity: O(n);
+ * Space Complexity: O(1);
  */
 
 function reverse_array_in_groups(nums: number[], group_size: number): void {

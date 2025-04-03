@@ -1,10 +1,7 @@
 /**
- * ### 🤔 Question:-
- * Given an array of positive integers arr[] of size n, the task is to 
- * find second largest distinct element in the array. Note: If the second 
- * largest element does not exist, return -1.
+ * #### Given an array of positive integers arr[] of size n, the task is to find second largest distinct element in the array. Note: If the second largest element does not exist, return -1.
  * 
- * #### 🧠 Solution:- Best approach - using one loop
+ * Solution:- best approach - using only one loop
  * 
  * Eg.1:-
  * input: nums[] = [12, 35, 1, 10, 34, 1],
@@ -14,8 +11,8 @@
  * input: nums[] = [10, 10, 10],
  * output: -1
  * 
- *#### Time Complexity: O(n);
- *####  Space Complexity: O(1);
+ * Time Complexity: O(n);
+ * Space Complexity: O(1);
 */
 
 function second_largest_using_one_loop(nums: number[]): number {

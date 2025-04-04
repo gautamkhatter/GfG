@@ -18,11 +18,16 @@
 function sum_of_digits_by_repetitively_add(num: number) {
    let sum = 0;
    while (num > 0 || sum > 9) {
+      // check if the sum is 2 digit number
+      // if yes, then reset the values
       if (num === 0) {
          num = sum;
          sum = 0;
       }
+
+      // take the last digit and add it to sum
       sum += num % 10;
+      // remove the last digit from the given number
       num = Math.floor(num / 10);
    }
    return sum;

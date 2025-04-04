@@ -15,7 +15,7 @@
  * Space Complexity: O(1);
  */
 
-function sum_of_digits_by_repetitively_add(num: number) {
+function sum_of_digits_by_repetitively_add(num: number): number {
    let sum = 0;
    while (num > 0 || sum > 9) {
       // check if the sum is 2 digit number

@@ -36,7 +36,7 @@ function sort_in_wave_using_one_loop(nums: number[]) {
 function swap(nums: number[], a: number, b: number) {
    let temp = nums[a];
    nums[a] = nums[b];
-   nums[b] = nums[a];
+   nums[b] = temp;
 }
  
 /**

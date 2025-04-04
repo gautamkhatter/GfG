@@ -29,8 +29,15 @@ function max_profit_by_exploring_all_pairs(prices: number[]) {
 /**
  * ### 💡 Idea behind the approach:-
  *
- * The idea behind this approach is simple,
- *
+ * The idea behind this approach is simple, we use two nested loops to explore
+ * all possible ways to buy and sell stock. 
+ * 
+ * Outer loop: decides the buy price of the stock
+ * Inner loop: decides the sell price of the stock
+ * 
+ * We will get our maximum profit after exploring every pair where we get 
+ * our maximum difference of selling - (minus) buying price.
+ * 
  *
  * ### 🤯 Dry run of the code:-
  *

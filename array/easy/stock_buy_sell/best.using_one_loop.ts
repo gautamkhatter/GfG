@@ -18,7 +18,10 @@ function max_profit_using_one_loop(prices: number[]) {
    let result = 0;
 
    for (let currentDay = 1; currentDay < prices.length; currentDay++) {
+      // we track the min so far
       min_so_far = Math.min(min_so_far, prices[currentDay]);
+
+      // here we check if the difference between the current price and the minimum
       result = Math.max(result, prices[currentDay] - min_so_far);
    }
 

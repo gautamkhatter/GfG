@@ -29,25 +29,21 @@ function rotate_array_by_juggling(
 ): void {
    let array_size = nums.length;
    left_rotate_count %= array_size;
-
-   // calculating number of cycles in the rotation
    let total_cycles = gcd(array_size, left_rotate_count);
 
    // now we start processing each cycle;
    for (let cycle_count = 0; cycle_count < total_cycles; cycle_count++) {
-      // start element of the current cycle
       let temp_element = nums[cycle_count],
          current_position = cycle_count,
          next_position: number;
 
       while (true) {
          next_position = (current_position + left_rotate_count) % array_size;
-
          if (next_position === cycle_count) break;
-
          nums[current_position] = nums[next_position];
          current_position = next_position;
       }
+
       nums[current_position] = temp_element;
    }
 }

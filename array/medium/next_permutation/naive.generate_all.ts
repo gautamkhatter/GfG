@@ -11,17 +11,13 @@
  * Space Complexity: O(n!);
  */
 
-function find_next_permutation_by_generating_all(sequence: number[]): void {
+function find_next_permutation_by_generating_all(sequence: number[]): number[] {
    const permutations: number[][] = [];
-
-   // building all the permutations for the given sequence
    build_permutations(permutations, sequence, 0);
+   
    // sorting the permutations in lexicographic order
    sort_permutations(permutations);
-
-   // finding the next sequence in the sorted order of permutations
-   const next_sequence = next_permutation(permutations, sequence);
-   console.log(next_sequence);
+   return next_permutation(permutations, sequence);
 }
 
 function next_permutation(

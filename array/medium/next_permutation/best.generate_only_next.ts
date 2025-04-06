@@ -32,7 +32,10 @@ function find_next_permutation_using_one_loop(sequence: number[]): void {
       return;
    }
 
-   // Step 2: Find the smallest number from right that's greater than pivot
+   // Step 2: Scan right-to-left to find the successor of pivot
+   // We need to find the smallest number that's greater than pivot in the right portion
+   // This ensures we get the next lexicographically larger permutation
+   // We scan from right because rightmost values give us the smallest possible increase
    for (
       let successorIndex = length - 1;
       successorIndex > pivot;
@@ -65,8 +68,8 @@ function find_next_permutation_using_one_loop(sequence: number[]): void {
  * The idea behind this approach is simple:-
  * Step 1: Find the pivot element?
  * -------------------------------
- * we start from the right side of the sequence.
- * There we look for the place in the sequence where the numbers start getting smaller.
+ * We start by scanning right-to-left of the given sequence.
+ * We look for the first number that breaks the descending order when moving right-to-left
  * This position/place is what we call as 'pivot'.
  * Eg: [1,5,8,4,7,5,2,1]: Here the pivot element is '4' because its smaller than 7 after it.
  *

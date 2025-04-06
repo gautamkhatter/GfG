@@ -14,40 +14,57 @@
  */
 
 function majority_element_using_boyer_moore_voting_algorithm(nums: number[]) {
+   // Initialize two potential majority candidates and their counts
+   // Since we can have at most 2 elements appearing more than n/3 times
    let majority1 = -1,
       majority2 = -1,
       maj_count_1 = 0,
       maj_count_2 = 0;
 
+   // Array to store the final majority elements
    const majority: number[] = [];
 
+   // First pass: Boyer-Moore voting algorithm to find potential candidates
    for (const element of nums) {
+      // If current element matches first candidate, increment its count
       if (majority1 === element) maj_count_1++;
+      // If current element matches second candidate, increment its count
       else if (majority2 === element) maj_count_2++;
+      // If first candidate is not set (count = 0), make current element the candidate
       else if (maj_count_1 === 0) {
          majority1 = element;
          maj_count_1++;
-      } else if (majority2 === 0) {
+      }
+      // If second candidate is not set (count = 0), make current element the candidate
+      else if (majority2 === 0) {
          majority2 = element;
          maj_count_2++;
-      } else {
+      }
+      // If element doesn't match either candidate, decrease both counts
+      // This is the pairing/cancellation step of Boyer-Moore
+      else {
          maj_count_1--;
          maj_count_2--;
       }
    }
 
+   // Reset counts for second pass
    maj_count_1 = 0;
    maj_count_2 = 0;
 
+   // Second pass: Count the actual occurrences of the potential candidates
    for (const element of nums) {
       if (majority1 === element) maj_count_1++;
       if (majority2 === element) maj_count_2++;
    }
 
-   if (maj_count_1 > Math.floor(length / 3)) majority.push(majority1);
-   if (maj_count_2 > Math.floor(length / 3) && majority1 !== majority2)
+   // Check if the candidates appear more than n/3 times
+   if (maj_count_1 > Math.floor(nums.length / 3)) majority.push(majority1);
+   
+   if (maj_count_2 > Math.floor(nums.length / 3) && majority1 !== majority2)
       majority.push(majority2);
 
+   // Sort the result array if there are two majority elements
    if (majority.length === 2 && majority[0] > majority[1])
       [majority[0], majority[1]] = [majority[1], majority[0]];
 

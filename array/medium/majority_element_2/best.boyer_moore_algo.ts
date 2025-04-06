@@ -16,10 +16,10 @@
 function majority_element_using_boyer_moore_voting_algorithm(nums: number[]) {
    // Initialize two potential majority candidates and their counts
    // Since we can have at most 2 elements appearing more than n/3 times
-   let majority1 = -1,
-      majority2 = -1,
-      maj_count_1 = 0,
-      maj_count_2 = 0;
+   let candidate1 = -1,
+      candidate2 = -1,
+      count1 = 0,
+      count2 = 0;
 
    // Array to store the final majority elements
    const majority: number[] = [];
@@ -27,42 +27,42 @@ function majority_element_using_boyer_moore_voting_algorithm(nums: number[]) {
    // First pass: Boyer-Moore voting algorithm to find potential candidates
    for (const element of nums) {
       // If current element matches first candidate, increment its count
-      if (majority1 === element) maj_count_1++;
+      if (candidate1 === element) count1++;
       // If current element matches second candidate, increment its count
-      else if (majority2 === element) maj_count_2++;
+      else if (candidate2 === element) count2++;
       // If first candidate is not set (count = 0), make current element the candidate
-      else if (maj_count_1 === 0) {
-         majority1 = element;
-         maj_count_1++;
+      else if (count1 === 0) {
+         candidate1 = element;
+         count1++;
       }
       // If second candidate is not set (count = 0), make current element the candidate
-      else if (majority2 === 0) {
-         majority2 = element;
-         maj_count_2++;
+      else if (candidate2 === 0) {
+         candidate2 = element;
+         count2++;
       }
       // If element doesn't match either candidate, decrease both counts
       // This is the pairing/cancellation step of Boyer-Moore
       else {
-         maj_count_1--;
-         maj_count_2--;
+         count1--;
+         count2--;
       }
    }
 
    // Reset counts for second pass
-   maj_count_1 = 0;
-   maj_count_2 = 0;
+   count1 = 0;
+   count2 = 0;
 
    // Second pass: Count the actual occurrences of the potential candidates
    for (const element of nums) {
-      if (majority1 === element) maj_count_1++;
-      if (majority2 === element) maj_count_2++;
+      if (candidate1 === element) count1++;
+      if (candidate2 === element) count2++;
    }
 
    // Check if the candidates appear more than n/3 times
-   if (maj_count_1 > Math.floor(nums.length / 3)) majority.push(majority1);
-   
-   if (maj_count_2 > Math.floor(nums.length / 3) && majority1 !== majority2)
-      majority.push(majority2);
+   if (count1 > Math.floor(nums.length / 3)) majority.push(candidate1);
+
+   if (count2 > Math.floor(nums.length / 3) && candidate1 !== candidate2)
+      majority.push(candidate2);
 
    // Sort the result array if there are two majority elements
    if (majority.length === 2 && majority[0] > majority[1])

@@ -15,7 +15,10 @@ function find_next_permutation_using_one_loop(sequence: number[]): void {
    const length = sequence.length;
    let pivot = -1;
 
-   // Step 1: Find the pivot - first element from right that's smaller than its next element
+   // Step 1: Find the pivot by scanning right-to-left
+   // We look for the first number that breaks the descending order when moving right-to-left
+   // This number (pivot) is smaller than the number to its right, making it a candidate for swapping
+   // Example: in [1,5,8,4,7,5,2,1], 4 is the pivot because it's smaller than 7 to its right
    for (let currentIndex = length - 2; currentIndex >= 0; currentIndex--) {
       if (sequence[currentIndex] < sequence[currentIndex + 1]) {
          pivot = currentIndex;

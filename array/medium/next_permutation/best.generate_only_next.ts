@@ -15,6 +15,7 @@ function find_next_permutation_using_one_loop(sequence: number[]): void {
    const length = sequence.length;
    let pivot = -1;
 
+   // Step 1: Find the pivot - first element from right that's smaller than its next element
    for (let currentIndex = length - 2; currentIndex >= 0; currentIndex--) {
       if (sequence[currentIndex] < sequence[currentIndex + 1]) {
          pivot = currentIndex;
@@ -22,17 +23,20 @@ function find_next_permutation_using_one_loop(sequence: number[]): void {
       }
    }
 
+   // If no pivot found, array is in descending order - return smallest permutation
    if (pivot === -1) {
       sequence.reverse();
       return;
    }
 
+   // Step 2: Find the smallest number from right that's greater than pivot
    for (
       let successorIndex = length - 1;
       successorIndex > pivot;
       successorIndex--
    ) {
       if (sequence[successorIndex] > sequence[pivot]) {
+         // Swap pivot with its successor
          [sequence[successorIndex], sequence[pivot]] = [
             sequence[pivot],
             sequence[successorIndex],
@@ -41,9 +45,10 @@ function find_next_permutation_using_one_loop(sequence: number[]): void {
       }
    }
 
+   // Step 3: Reverse the subarray after pivot to get the smallest arrangement
    let left = pivot + 1;
    let right = length - 1;
-   
+
    while (left < right) {
       [sequence[left], sequence[right]] = [sequence[right], sequence[left]];
       left++;

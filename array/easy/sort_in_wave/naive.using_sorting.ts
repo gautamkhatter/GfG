@@ -22,10 +22,10 @@
 function sort_in_wave_using_sorting(nums: number[]): void {
    nums.sort((a, b) => a - b);
    
-   for (let i = 0; i < nums.length; i += 2) {
-      let temp = nums[i];
-      nums[i] = nums[i+1];
-      nums[i+1] = temp;
+   for (let evenIndex = 0; evenIndex < nums.length; evenIndex += 2) {
+      let temp = nums[evenIndex];
+      nums[evenIndex] = nums[evenIndex+1];
+      nums[evenIndex+1] = temp;
    }
 }
 

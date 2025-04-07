@@ -23,27 +23,35 @@
  * Space Complexity: O(1);
  */
 
-function rotate_array_by_juggling(
-   nums: number[],
-   rotate_length: number
-): void {
+function rotate_array_by_juggling(nums: number[], rotate_length: number): void {
    let length = nums.length;
+   // Handle cases where rotation length > array length
    rotate_length %= length;
+   // Calculate number of cycles using GCD
    let all_cycles = gcd(length, rotate_length);
 
-   // now we start processing each cycle;
-   for (let cycle = 0; cycle < all_cycles; cycle++) {
-      let temp = nums[cycle],
-         current_pos = cycle,
+   // Process each cycle independently
+   for (let i = 0; i < all_cycles; i++) {
+      // Store first element of current cycle
+      let temp = nums[i],
+         // Track current position in cycle
+         current_pos = i,
+         // Will store next position in cycle
          next_pos: number;
 
+      // Process current cycle until we return to starting position
       while (true) {
+         // Calculate next position using formula: (current + rotation) % length
          next_pos = (current_pos + rotate_length) % length;
-         if (next_pos === cycle) break;
+         // If we've returned to cycle start, exit
+         if (next_pos === i) break;
+         // Move element from next position to current position
          nums[current_pos] = nums[next_pos];
+         // Update current position for next iteration
          current_pos = next_pos;
       }
 
+      // Place the stored element in its final position
       nums[current_pos] = temp;
    }
 }

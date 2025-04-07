@@ -16,7 +16,7 @@
 function majority_element_using_hashmap2(nums: number[]) {
    const length = nums.length;
    const freqMap = new Map();
-   const majority: number[] = [];
+   const result: number[] = [];
 
    for (const element of nums) {
       freqMap.set(element, (freqMap.get(element) || 0) + 1);
@@ -24,14 +24,14 @@ function majority_element_using_hashmap2(nums: number[]) {
 
    for (const [element, freqCount] of freqMap.entries()) {
       if (freqCount > Math.floor(length / 3)) {
-         majority.push(Number(element));
+         result.push(Number(element));
       }
    }
 
-   if (majority.length === 2 && majority[0] > majority[1]) {
-      [majority[0], majority[1]] = [majority[1], majority[0]];
+   if (result.length === 2 && result[0] > result[1]) {
+      [result[0], result[1]] = [result[1], result[0]];
    }
-   return majority;
+   return result;
 }
 
 const nums2 = [2, 2, 3, 1, 3, 2, 1, 1];

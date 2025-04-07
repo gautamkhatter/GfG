@@ -61,32 +61,28 @@ function sort_permutations(permutations: number[][]): void {
 
 function build_permutations(
    permutations: number[][],
-   given_sequence: number[],
-   pivot_position: number
+   sequence: number[],
+   pivot_pos: number
 ) {
    // complete permutation found when pivot reaches final element
-   if (pivot_position === given_sequence.length - 1) {
-      permutations.push([...given_sequence]);
+   if (pivot_pos === sequence.length - 1) {
+      permutations.push([...sequence]);
    }
 
    // trying every possible element at pivot position
-   for (
-      let swap_pos = pivot_position;
-      swap_pos < given_sequence.length;
-      swap_pos++
-   ) {
-      [given_sequence[pivot_position], given_sequence[swap_pos]] = [
-         given_sequence[swap_pos],
-         given_sequence[pivot_position],
+   for (let swap_pos = pivot_pos; swap_pos < sequence.length; swap_pos++) {
+      [sequence[pivot_pos], sequence[swap_pos]] = [
+         sequence[swap_pos],
+         sequence[pivot_pos],
       ];
 
       // after we fix the pivot position we continue to build the rest of the permutation
-      build_permutations(permutations, given_sequence, pivot_position + 1);
+      build_permutations(permutations, sequence, pivot_pos + 1);
 
       // before we try the next permutation we have to restore the original order of the array
-      [given_sequence[pivot_position], given_sequence[swap_pos]] = [
-         given_sequence[swap_pos],
-         given_sequence[pivot_position],
+      [sequence[pivot_pos], sequence[swap_pos]] = [
+         sequence[swap_pos],
+         sequence[pivot_pos],
       ];
    }
 }
@@ -124,8 +120,8 @@ console.log(find_next_permutation_by_generating_all(sequence));
  * Function execution:
  **    aliases used: pc = permutations
  **                   s = sequence       
- **                  gs = given_sequence
- **                  pivot = pivot_position
+ **                  gs = sequence
+ **                  pivot = pivot_pos
  **                  si = swapElPosition / swap index
  * 
  * Inside the findNextPermutationByGeneratingAll() function

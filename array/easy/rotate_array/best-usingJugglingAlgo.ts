@@ -25,26 +25,26 @@
 
 function rotate_array_by_juggling(
    nums: number[],
-   left_rotate_count: number
+   rotate_length: number
 ): void {
-   let array_size = nums.length;
-   left_rotate_count %= array_size;
-   let total_cycles = gcd(array_size, left_rotate_count);
+   let length = nums.length;
+   rotate_length %= length;
+   let all_cycles = gcd(length, rotate_length);
 
    // now we start processing each cycle;
-   for (let cycle_count = 0; cycle_count < total_cycles; cycle_count++) {
-      let temp_element = nums[cycle_count],
-         current_position = cycle_count,
-         next_position: number;
+   for (let cycle = 0; cycle < all_cycles; cycle++) {
+      let temp = nums[cycle],
+         current_pos = cycle,
+         next_pos: number;
 
       while (true) {
-         next_position = (current_position + left_rotate_count) % array_size;
-         if (next_position === cycle_count) break;
-         nums[current_position] = nums[next_position];
-         current_position = next_position;
+         next_pos = (current_pos + rotate_length) % length;
+         if (next_pos === cycle) break;
+         nums[current_pos] = nums[next_pos];
+         current_pos = next_pos;
       }
 
-      nums[current_position] = temp_element;
+      nums[current_pos] = temp;
    }
 }
 
@@ -223,12 +223,12 @@ function gcd(dividend: number, divisor: number): number {
  *    • Cycles(c) = gcd(len, k) => gcd(6,2) => 2
  *    • Iterations:=
  *           aliases used:= cycle = c
- *                       := cycle_count = cc
- *                       := current_position = cp
- *                       := next_position = np
+ *                       := cycle = cc
+ *                       := current_pos = cp
+ *                       := next_pos = np
  *                       := tempElement = t
  *                       := leftRotationCount = lrc
- *                       := array_size = l
+ *                       := length = l
  *
  **          0       2       4
  *         [10, 23, 34, 45, 57, 66]

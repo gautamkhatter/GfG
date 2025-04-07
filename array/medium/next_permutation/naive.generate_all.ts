@@ -14,7 +14,6 @@
 function find_next_permutation_by_generating_all(sequence: number[]): number[] {
    const permutations: number[][] = [];
    build_permutations(permutations, sequence, 0);
-   
    // sorting the permutations in lexicographic order
    sort_permutations(permutations);
    return next_permutation(permutations, sequence);
@@ -24,24 +23,34 @@ function next_permutation(
    permutations: number[][],
    sequence: number[]
 ): number[] {
+   // Get total number of permutations generated
    const length = permutations.length;
 
+   // Iterate through all permutations to find the current sequence
    for (let index = 0; index < length; index++) {
+      // Check if current permutation matches our input sequence
       const is_identical = is_identical_sequence(permutations[index], sequence);
       if (is_identical) {
+         // If not the last permutation, return the next one in sequence
          if (index < length - 1) {
             return [...permutations[index + 1]];
-         } else if (index === length - 1) {
+         }
+         // If it's the last permutation, wrap around to first permutation
+         else if (index === length - 1) {
             return [...permutations[0]];
          }
       }
    }
+   // If sequence not found in permutations, return original sequence
    return [...sequence];
 }
 
 function sort_permutations(permutations: number[][]): void {
    permutations.sort((permA, permB) => {
+      // Compare elements at each position until a difference is found
       for (let position = 0; position < permA.length; position++) {
+         // If elements at current position differ, use their difference
+         // to determine sort order (ascending)
          if (permA[position] !== permB[position]) {
             return permA[position] - permB[position];
          }
@@ -70,7 +79,7 @@ function build_permutations(
          given_sequence[swap_pos],
          given_sequence[pivot_position],
       ];
-      
+
       // after we fix the pivot position we continue to build the rest of the permutation
       build_permutations(permutations, given_sequence, pivot_position + 1);
 
